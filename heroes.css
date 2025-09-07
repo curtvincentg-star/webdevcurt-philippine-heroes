@@ -1,0 +1,421 @@
+
+
+/* (↓) ito ang pra sa navigation bar (↓) */
+
+*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+body{
+    font-family: fantasy;
+    min-height: 1000px;
+    background-color: rgb(255, 255, 255);
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+.navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 8px;
+    max-width: 2133px;
+
+} 
+.navbar-logo{
+    font-size: 32px;
+    font-weight: 600;
+    color: chocolate;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo img {
+  height: 100px; 
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav-menu li {
+  margin-left: 30px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none; 
+}
+
+
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px; 
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/* (↓) ito nmn ang para sa navbar menu (↓) */
+
+.navbar-container .navbar-menu{
+    display: flex;
+    text-align: center;
+    gap: 16px;
+    list-style: none;
+}
+.navbar-container .navbar-menu li a{
+    text-decoration: none;
+    color: chocolate;
+    font-size: 28px;
+    font-weight: 500;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.7s ease;
+    white-space: nowrap;
+}
+.navbar-container .navbar-menu li a:hover {
+  background:#f9f4e7;
+  color: black;
+  border: 2px solid #fff;
+  transition: all 0.4s ease;
+}
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: rgb(255, 255, 255);
+    transition: all 0.4s ease-in-out;
+}
+/* (↓) ito ang pra sa navigation bar button (↓)*/
+
+button{
+    text-decoration: none;
+    background-color: black;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px; width: 90px;
+}
+button a{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* (↓) ito naman ang para sa footer (↓) */
+
+main {
+  flex: 1;
+}
+.site-footer {
+  background: rgba(0, 0, 0, 0.6); 
+  color: #fff;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 0;
+  font-family: sans-serif;
+  backdrop-filter: blur(6px);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-icons a {
+  margin: 0 12px;
+  font-size: 20px;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: chocolate;
+  transform: scale(1.2);
+}
+
+.footer-links {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-links span {
+  color: #666;
+}
+
+.footer-copy {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #777;
+}
+.footer-Wpo {
+ text-decoration: none;
+ margin-right: 500;
+}
+
+
+/* (↓) ito naman ang para sa menu bar connected to JS (↓) */
+
+@media (max-width: 800px) {
+    .navbar{
+      background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: none;
+    }
+    .navbar-container .navbar-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 27px !important;
+        position: absolute;
+        height: 1000px;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 80px 24px;
+        box-shadow: 0 10px rgba(0,0,0,0.5);
+        backdrop-filter: blur(5px); 
+    }
+    .navbar-container .navbar-menu.active{
+        display: flex;
+    }
+    .navbar-toggle{
+        display: block;
+        z-index: 999;
+    }
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+
+
+.banner {
+    width: 100%;
+    height: 1px; 
+    overflow: hidden;
+    position: fixed;
+    z-index: -1;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    position: fixed ; 
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+.banner-spacer {
+    height: 10px; 
+}
+
+
+.gallery-heroes {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-left: 50%;
+    padding: 20px;
+    width: 40%;
+    background: white;
+    border-radius: 10px;
+  transform: translateX(-50%);
+    
+}
+
+.gallery-heroes h2 {
+    font-size: 2.5rem;
+    color: chocolate;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.gallery-heroes p {
+    font-size: 1.2rem;
+    color: #000000;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: fantasy;
+}
+
+.heroes-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 40px;
+    max-width: 1400px;
+    margin: 0 auto 80px;
+}
+
+.card {
+    position: relative; 
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: none; 
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow:15px 35px rgba(0, 0, 0, 0.2);
+    border-color: #DAA520;
+}
+
+.card img {
+    display: block;
+    width: 85%;
+    height: 350px;
+    object-fit: cover;
+    
+}
+
+.card-content {
+    width: 85%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.5); 
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 15px 15px;
+}
+.card-content h3,
+.card-content p {
+    margin:  0px 8px;
+    padding:  0px 0px 10px ;
+    letter-spacing: 2px;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #DAA520, #B8860B);
+    color: rgb(0, 0, 0);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #B8860B, #DAA520);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
+    border-color: #8B4513;
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 250px;
+    }
+
+    .banner-spacer {
+        height: 10px;
+    }
+    
+    .gallery-heroes h2 {
+        font-size: 2rem;
+    }
+    
+    .gallery-heroes p {
+        font-size: 1rem;
+    }
+    
+    .heroes-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+    
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroes-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 15px;
+    }
+    
+    .gallery-heroes {
+        margin-bottom: 10px;
+    }
+    
+    .gallery-heroes h2 {
+        font-size: 1.8rem;
+    }
+    
+    .card img {
+        height: 200px;
+    }
+}

@@ -1,0 +1,329 @@
+/* (↓) ito ang pra sa navigation bar (↓) */
+
+*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+body{
+    font-family: fantasy;
+    min-height: 1000px;
+    background-color: rgb(255, 255, 255);
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+.navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 8px;
+    max-width: 2133px;
+}
+.navbar-logo{
+    font-size: 32px;
+    font-weight: 600;
+    color: chocolate;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo img {
+ height: 100px; 
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav-menu li {
+  margin-left: 30px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px; 
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/* (↓) ito nmn ang para sa navbar menu (↓) */
+
+.navbar-container .navbar-menu{
+    display: flex;
+    text-align: center;
+    gap: 16px;
+    list-style: none;
+}
+.navbar-container .navbar-menu li a{
+    text-decoration: none;
+    color: chocolate;
+    font-size: 28px;
+    font-weight: 500;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.7s ease;
+    white-space: nowrap;
+}
+.navbar-container .navbar-menu li a:hover {
+  background:#f9f4e7;
+  color: black;
+  border: 2px solid #fff;
+  transition: all 0.4s ease;
+}
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #fff;
+    transition: all 0.4s ease-in-out;
+}
+
+
+/* (↓) ito ang pra sa navigation bar button (↓)*/
+
+button{
+    text-decoration: none;
+    background-color: black;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px; width: 90px;
+}
+button a{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+/* (↓) ito naman ang para sa menu bar connected to JS (↓) */
+
+@media (max-width: 800px) {
+    .navbar{
+      background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: none;
+    }
+    .navbar-container .navbar-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 27px !important;
+        position: absolute;
+        height: 1000px;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 80px 24px;
+        box-shadow: 0 10px rgba(0,0,0,0.5);
+        backdrop-filter: blur(5px); 
+    }
+    .navbar-container .navbar-menu.active{
+        display: flex;
+    }
+    .navbar-toggle{
+        display: block;
+        z-index: 999;
+    }
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0 8px;
+    }
+    .navbar-logo {
+        font-size: 27px;
+    }
+    .navbar-container .navbar-menu li a {
+        font-size: 19px;
+        padding: 3px 15px;
+    }
+}
+/* (↓) ito naman ang para sa footer (↓) */
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0
+}
+main {
+  flex: 1;
+}
+.site-footer {
+  background: rgba(0, 0, 0, 0.6); 
+  color: #fff;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 0;
+  font-family: sans-serif;
+  backdrop-filter: blur(6px);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-icons a {
+  margin: 0 12px;
+  font-size: 20px;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: chocolate;
+  transform: scale(1.2);
+}
+
+.footer-links {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-links span {
+  color: #666;
+}
+
+.footer-copy {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #777;
+}
+.footer-Wpo {
+ text-decoration: none;
+ margin-right: 500;
+}
+
+
+
+
+
+/* (↓) ito naman ang sa banner (↓) */
+
+.banner img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 1s ease-in-out;
+} 
+.banner-spacer {
+    height: 436px;
+}
+
+.banner-text {
+  position: relative;
+  top: 90%;
+  left: 40%;
+  transform: translate(-50%);
+  text-align: center;
+  color: white;
+  font-family: fantasy;
+}
+
+.banner-text p {
+  margin: 5px 0;
+  font-size: clamp(55px, 2vw, 24px);
+    text-align: center;
+    margin-left: 15%;
+}
+
+
+
+
+.frame-container {
+    position: fixed;
+    top: 0px;          
+    left: 50%;         
+    transform: translateX(-50%);
+    width: 400px;       
+    height: 200px;      
+    display: block;
+    z-index: 1;        
+}
+
+#frameImage {
+    position: absolute;  
+    top: 132px; 
+    left: 47.5%;          
+    transform: translateX(-50%);
+    width: 250px; 
+    height: 310px; 
+    object-fit: cover;
+    z-index: -1;        
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+}
+
+.frame {
+    position: absolute;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;         
+    pointer-events: none;
+}
+
+
